@@ -8,7 +8,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    Add Book
+    Add Data Siswa
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -20,21 +20,29 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('books.store') }}">
+      <form method="post" action="{{ route('siswa.store') }}">
           <div class="form-group">
               @csrf
-              <label for="name">Book Name:</label>
-              <input type="text" class="form-control" name="book_name"/>
+              <label for="nik">NIK:</label>
+              <input type="text" class="form-control" name="nik"/>
           </div>
           <div class="form-group">
-              <label for="price">Book ISBN Number :</label>
-              <input type="text" class="form-control" name="isbn_no"/>
+              <label for="name">NAME :</label>
+              <input type="text" class="form-control" name="name"/>
           </div>
           <div class="form-group">
-              <label for="quantity">Book Price :</label>
-              <input type="text" class="form-control" name="book_price"/>
+              <label for="kelas">KELAS :</label>
+              <input type="text" class="form-control" name="kelas"/>
           </div>
-          <button type="submit" class="btn btn-primary">Create Book</button>
+          <div class="form-group">
+            <label for="alamat">ALAMAT :</label>
+            <input type="text" class="form-control" name="alamat"/>
+        </div>
+        <div class="form-group">
+            <label for="jeniskelamin">Jenis Kelamin :</label>
+            <input type="text" class="form-control" name="jeniskelamin"/>
+        </div>
+          <button type="submit" class="btn btn-primary">Tambah Data</button>
       </form>
   </div>
 </div>

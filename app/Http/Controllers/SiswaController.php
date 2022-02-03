@@ -25,7 +25,7 @@ class SiswaController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -36,7 +36,16 @@ class SiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nik' => 'required',
+            'name' => 'required',
+            'kelas' => 'required',
+            'alamat' => 'required',
+            'jeniskelamin' => 'required',
+        ]);
+        $siswa = siswa::create($validatedData);
+
+        return redirect('/siswa')->with('success', ' data siswa is successfully saved');
     }
 
     /**

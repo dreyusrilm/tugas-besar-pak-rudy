@@ -29,7 +29,7 @@
         <tr>
             <td>{{$siswa->id}}</td>
             <td>{{$siswa->nik}}</td>
-            <td>{{$siswa->nama}}</td>
+            <td>{{$siswa->name}}</td>
             <td>{{$siswa->kelas}}</td>
             <td>{{$siswa->alamat}}</td>
             <td>{{$siswa->jeniskelamin}}</td>
