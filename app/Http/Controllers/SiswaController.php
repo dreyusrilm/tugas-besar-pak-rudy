@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Siswa;
 use Illuminate\Http\Request;
 
 class SiswaController extends Controller
@@ -13,7 +13,9 @@ class SiswaController extends Controller
      */
     public function index()
     {
-        //
+        $siswa = siswa::all();
+
+        return view('index', compact('siswa'));
     }
 
     /**
