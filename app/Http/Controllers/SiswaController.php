@@ -67,7 +67,9 @@ class SiswaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $siswa = siswa::findOrFail($id);
+
+        return view('edit', compact('siswa'));
     }
 
     /**
@@ -79,7 +81,16 @@ class SiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'nik' => 'required',
+            'name' => 'required',
+            'kelas' => 'required',
+            'alamat' => 'required',
+            'jeniskelamin' => 'required',
+        ]);
+        siswa::whereId($id)->update($validatedData);
+
+        return redirect('/siswa')->with('success', 'data siswa is successfully updated');
     }
 
     /**
@@ -90,6 +101,9 @@ class SiswaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $siswa = siswa::findOrFail($id);
+        $siswa->delete();
+
+        return redirect('/siswa')->with('success', 'Data Siswa is successfully deleted');
     }
 }
