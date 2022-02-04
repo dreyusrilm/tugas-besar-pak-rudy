@@ -45,5 +45,6 @@
         @endforeach
     </tbody>
   </table>
+  <a href="{{route('siswa.create')}}" type="submit" class="btn btn-primary">Tambah Data</a>
 <div>
 @endsection
